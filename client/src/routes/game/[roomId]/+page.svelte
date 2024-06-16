@@ -152,6 +152,19 @@
       console.log("response", isOk);
     });
   }
+
+
+  function mapPieces(numericPiece) {
+    const chinesePiece = [
+    "帥","將","仕","士","相","象","傌","馬","車","車","炮","炮","兵","卒",
+    ];
+
+    return chinesePiece[numericPiece-1];
+  }
+
+  // function mapPieces(numericPiece){ 
+  //   return "帥" ; 
+  // }
 </script>
 
 <button on:click={start}>Start Game</button>
@@ -159,7 +172,8 @@
 <div class="hand">
   {#each myPlayerState.hand as piece, index}
     <GamePiece
-      pieceType={piece}
+      pieceChar={mapPieces(piece)}
+      pieceType= {piece}
       onToggleSelected={(_) => onPieceToggle(index)}
       isSelected={piecesToPlayIndexes.includes(index)}
     />

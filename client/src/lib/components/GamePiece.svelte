@@ -1,5 +1,6 @@
 <script>
   export let pieceType = 0; // 1~14
+  export let pieceChar = "" // Chinese character
   export let onToggleSelected = () => {};
   
   export let isSelected = false;
@@ -16,7 +17,7 @@
     onToggleSelected(pieceType);
   }}
 >
-  {pieceType}
+  {pieceChar}
 </button>
 
 <style>
@@ -29,7 +30,7 @@
     align-items: center;
     font-size: 16px;
     line-height: 1;
-    font-family: sans-serif;
+    font-family: Heiti TC;
     background-color: #fed;
     border: 2px solid black;
     color: black;
